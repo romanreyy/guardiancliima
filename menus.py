@@ -1,6 +1,5 @@
 #Interfaz de consola y menus de GuardianClima ITBA
 #menu de acceso, menu principal y pantalla Acerca De.
-import os
 
 
 from config import NOMBRE_APP, NOMBRE_GRUPO, NUMERO_GRUPO, INTEGRANTES
@@ -18,6 +17,9 @@ from ia import opcion_consejo_ia
 # funciones para limpiar pantalla, imprimir separadores y titulos
 # ══════════════════════════════════════════════════════════════════════════════
 
+def limpiar_pantalla():
+    print("\n" * 2)
+
 def separador():
     print("-" * 60)
 
@@ -26,9 +28,7 @@ def titulo(texto):
     print(f"  {texto}")
     print("=" * 60)
 
-def limpiar_pantalla():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
+
 # ══════════════════════════════════════════════════════════════════════════════
 # Pantalla de bienvenida
 # ══════════════════════════════════════════════════════════════════════════════
