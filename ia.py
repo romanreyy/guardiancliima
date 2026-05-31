@@ -1,7 +1,7 @@
 
 #Consejo de vestimenta con Google Gemini (modulo Inteligencia Artificial)
 #Uso de la libreria google-genai.
-
+import re
 
 from google import genai
 from config import API_KEY_GEMINI
@@ -86,8 +86,15 @@ def opcion_consejo_ia(ultima_consulta):
     print(f"  {temperatura} C  |  {condicion}  |  Humedad: {humedad}%  |  Viento: {viento} km/h")
 
     consejo = obtener_consejo_gemini(ciudad, temperatura, condicion, humedad, viento)
+    consejo = limpiar_markdown(consejo)
 
     print("\n  Consejo de vestimenta:")
     print("-" * 60)
     print(f"  {consejo}")
     print("=" * 60)
+
+def limpiar_markdown(texto):
+    texto = re.sub(r'\*\*(.*?)\*\*', r'\1', texto)  # negrita
+    texto = re.sub(r'\*(.*?)\*', r'\1', texto)        # italica
+    texto = re.sub(r'#+\s', '', texto)                # titulos
+    return texto
