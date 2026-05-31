@@ -162,7 +162,7 @@ El almacenamiento de usuarios en CSV es una **simulacion educativa**. En aplicac
 | Modulo | Como se implementa |
 |--------|-------------------|
 | Programacion | Funciones modulares, diccionarios, CSV, control de flujo, manejo de errores |
-| Ciberseguridad | Validacion de contrasena con 5 criterios, hashing SHA-256, advertencia sobre CSV inseguro |
+| Ciberseguridad | Validacion de contraseña con 5 criterios, hashing SHA-256, advertencia sobre CSV inseguro |
 | Analisis de Datos | historial_global.csv con estadisticas calculadas en Python, exportable para graficos Excel |
 | Inteligencia Artificial | Google Gemini API con prompt disenado por el equipo, consejo de vestimenta personalizado |
 | Cloud y Conectividad | GitHub como repositorio remoto + OpenWeatherMap y Gemini consumidos via HTTPS |

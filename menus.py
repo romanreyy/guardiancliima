@@ -56,7 +56,7 @@ def flujo_login():
 
     while intentos < max_intentos:
         username = input("\n  Usuario: ").strip()
-        password = input("  Contrasena: ").strip()
+        password = input("  Contraseña: ").strip()
 
         if login(username, password):
             print(f"\n  Bienvenido, {username}!")
@@ -65,7 +65,7 @@ def flujo_login():
             intentos += 1
             restantes = max_intentos - intentos
             if restantes > 0:
-                print(f"  [!] Usuario o contrasena incorrectos. Intentos restantes: {restantes}")
+                print(f"  [!] Usuario o contraseña incorrectos. Intentos restantes: {restantes}")
             else:
                 print("  [!] Demasiados intentos fallidos. Volviendo al menu principal.")
 
@@ -96,32 +96,32 @@ def flujo_registro():
     # Elegir contraseña con validacion de seguridad
     while True:
         print(f"\n  Registrando usuario: {username}")
-        print("  La contrasena debe cumplir los siguientes criterios:")
+        print("  La contraseña debe cumplir los siguientes criterios:")
         print("    - Al menos 8 caracteres")
         print("    - Al menos una letra mayuscula")
         print("    - Al menos un numero")
         print("    - Al menos un simbolo especial (!@#$%^&*...)")
         print("    - Sin espacios en blanco")
 
-        password = input("\n  Ingrese una contrasena: ").strip()
+        password = input("\n  Ingrese una contraseña: ").strip()
         if not password:
-            print("  [!] La contrasena no puede estar vacia.")
+            print("  [!] La contraseña no puede estar vacia.")
             continue
 
         errores = validar_password(password)
 
         if errores:
-            print(f"\n  [!] Tu contrasena no cumple con:")
+            print(f"\n  [!] Tu contraseña no cumple con:")
             for error in errores:
                 print(f"      - Debe {error}")
             sugerir_password_segura()
-            print("\n  Intentar con otra contrasena.")
+            print("\n  Intentar con otra contraseña.")
             continue
 
         # Confirmar contraseña
-        confirmacion = input("  Confirmar contrasena: ").strip()
+        confirmacion = input("  Confirmar contraseña: ").strip()
         if password != confirmacion:
-            print("  [!] Las contrasenas no coinciden. Intentar de nuevo.")
+            print("  [!] Las contraseñas no coinciden. Intentar de nuevo.")
             continue
 
         break
@@ -129,7 +129,7 @@ def flujo_registro():
     # Guardar usuario 
     registrar_usuario(username, password)
     print(f"\n  Usuario '{username}' registrado exitosamente.")
-    print(f"  Contrasena guardada de forma segura (hash SHA-256).")
+    print(f"  Contraseña guardada de forma segura (hash SHA-256).")
     print(f"  Iniciando sesion automaticamente...")
     return username
 
@@ -195,7 +195,7 @@ def mostrar_acerca_de():
 
   MODULOS DEL CURSO INTEGRADOS
   - Programacion: funciones modulares, diccionarios, CSV, control
-  - Ciberseguridad: validacion de contrasena, hashing SHA-256
+  - Ciberseguridad: validacion de contraseña, hashing SHA-256
   - Analisis de Datos: historial CSV, estadisticas, graficos Excel
   - Inteligencia Artificial: Google Gemini API, prompt engineering
   - Cloud y Conectividad: GitHub + APIs externas via HTTPS

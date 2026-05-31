@@ -1,6 +1,6 @@
 
 #Autenticacion de usuarios (modulo Ciberseguridad)
-#login, registro, validacion de contrasena y hashing opcional.
+#login, registro, validacion de contraseña y hashing opcional.
 
 
 import csv
@@ -73,7 +73,7 @@ def validar_password(password):
 
 #Sugerencia de contraseña segura para el usuario.
 def sugerir_password_segura():
-    print("\n  Sugerencias para una contrasena mas segura:")
+    print("\n  Sugerencias para una contraseña mas segura:")
     print("  - Combina letras mayusculas y minusculas (ej: GuArDiAn)")
     print("  - Agrega numeros en posiciones no obvias (no solo al final)")
     print("  - Usa simbolos especiales: !@#$%^&*")
